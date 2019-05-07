@@ -14,3 +14,7 @@
 
  @import 'bootstrap';
  @import 'comments.scss', 'fields', 'messages', 'scaffolds';
+
+ html, body {
+     font-family: 'Raleway', sans-serif;
+ }
