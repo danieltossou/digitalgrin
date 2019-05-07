@@ -13,8 +13,16 @@
  */
 
  @import 'bootstrap';
- @import 'comments.scss', 'fields', 'messages', 'scaffolds';
+ @import 'comments.scss', 'fields', 'messages', 'scaffolds', 'registrations.css.scss';
 
  html, body {
      font-family: 'Raleway', sans-serif;
+     height: 100%;
+     margin: 0;
  }
+
+ .yield{
+    padding-top: 0;
+ }
+
+ 
