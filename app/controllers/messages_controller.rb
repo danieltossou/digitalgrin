@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+    @fields = Field.all
   end
 
   # GET /messages/1/edit
@@ -67,6 +68,7 @@ class MessagesController < ApplicationController
       @message = Message.find(params[:id])
       @comments = @message.comments.all
       @comment = @message.comments.build
+      @fields = Field.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

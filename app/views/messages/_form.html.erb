@@ -16,11 +16,10 @@
     <%= form.text_area :content %>
   </div>
 
-  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
 
   <div class="field">
-    <%= form.label :field_id %>
-    <%= form.number_field :field_id %>
+      <%= form.select 'field_id', options_for_select(@fields.collect{ |f| [f.name, f.id] }) %>
   </div>
 
   <div class="actions">
