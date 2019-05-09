@@ -65,5 +65,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap'
 gem 'jquery-rails'
 
-#Gem for devise
+# Gem for devise
 gem 'devise'
+
+# Gem for Octicons fonts
+gem 'octicons_helper'

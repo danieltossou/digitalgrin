@@ -13,7 +13,7 @@
  */
 
  @import 'bootstrap';
- @import 'comments.scss', 'fields', 'messages', 'scaffolds', 'registrations.css.scss';
+ @import 'comments.scss', 'fields', 'messages', 'scaffolds', 'registrations.css.scss', 'posts.scss';
 
  html, body {
      font-family: 'Raleway', sans-serif;
@@ -24,5 +24,32 @@
  .yield{
     padding-top: 0;
  }
+
+.nav-border {
+    border-bottom: 1px solid #C0C0C0;
+}
+
+.post-content {
+    margin-top: 15vh;
+}
+
+ .side-div {
+    height: 97.8vh;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.side-div-left {    
+    border-right: 1px solid #C0C0C0;
+}
+
+.side-div-right {    
+    border-left: 1px solid #C0C0C0;
+}
+
+.side-div-content {
+    margin-top: 13vh;
+    padding-left: 5vh;
+}
 
  
