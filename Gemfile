@@ -70,3 +70,6 @@ gem 'devise'
 
 # Gem for Octicons fonts
 gem 'octicons_helper'
+
+# Gem for rich text editor for article 
+gem 'trix-gem'

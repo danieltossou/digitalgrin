@@ -7,22 +7,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-          <a class="nav-link pl-5" href="#"><%= octicon "home", :height => 32,  :"aria-label" => "hi" %><span class="sr-only">(current)</span></a>
+          <a class="nav-link pl-5" href="#"><%= octicon "home", :height => 32, :color => '#fec235',  :"aria-label" => "home" %><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-5" href="#"><i class="fa fa-bell fa-2x"></i></a>
+          <a class="nav-link pl-5" href="#"><%= octicon "bell", :height => 32, :color => '#fec235',  :"aria-label" => "bell" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-5" href="#"><i class="fa fa-edit fa-2x"></i></a>
+          <a class="nav-link pl-5" href="#"><%= octicon "pencil", :height => 32, :color => '#fec235',  :"aria-label" => "pencil" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-5" href="#"><i class="fa fa-comments fa-2x"></i></a>
+          <a class="nav-link pl-5" href="#"><%= octicon "comment-discussion", :height => 32, :color => '#fec235',  :"aria-label" => "comment-discussion" %></a>
         </li>
       </ul>
     </div>
     <span class="dropdown my-2 my-sm-0">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user-cog fa-2x"></i>
+        <%= octicon "person", :height => 32,  :"aria-label" => "person" %>
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <% if user_signed_in? %>
@@ -48,13 +48,22 @@
 <div class="row">
   <div class="col-md-3 side-div bg-white side-div-left">
     <div class="side-div-content">
-      <h4><b>Home</b></h4>
-      <ul class="list-group">
-        <li><span class="oi oi-icon-name" title="icon name" aria-hidden="true"></span> Events</li>
-        <li></li>
-        <li>Team</li>
-        <li>Paramètres</li>
-      </ul>
+      <h4><b>Home</b></h4><br><br><br>
+      <div>
+        <%= octicon "calendar", :height => 28,  :"aria-label" => "calendar" %>&nbsp;&nbsp;
+        <b>Evènements</b>
+      </div><br>
+      <div>
+        <%= octicon "organization", :height => 28,  :"aria-label" => "organization" %>&nbsp;&nbsp;
+        <b>Team</b>
+      </div><br>
+      <div>
+        <%= octicon "tools", :height => 28,  :"aria-label" => "tools" %>&nbsp;&nbsp;
+        <b>Paramètres</b>
+      </div>
+      <div class="home-left-footer">
+            Conditions Générales d'utilisation<br>Contributeurs<br>DigitalGrin &copy; <%= Time.now.year %>
+      </div>
     </div>
   </div>
   <div class="col-md-6 col-xs-12 bg-light">
@@ -91,7 +100,11 @@
       <span class="oi oi-icon-name" title="icon name"></span>
     </center>
   </div>
-  <div class="col-md-3 side-div bg-white side-div-right"></div>
+  <div class="col-md-3 side-div bg-white side-div-right">
+    <div class="side-div-content">
+        <h4><b>Sponsors</b></h4>
+    </div>
+  </div>
 </div>
 
 

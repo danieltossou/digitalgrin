@@ -13,6 +13,7 @@
  */
 
  @import 'bootstrap';
+ @import 'build/build.css';
  @import 'comments.scss', 'fields', 'messages', 'scaffolds', 'registrations.css.scss', 'posts.scss';
 
  html, body {
@@ -49,7 +50,11 @@
 
 .side-div-content {
     margin-top: 13vh;
-    padding-left: 5vh;
+    padding-left: 2vh;
 }
 
+.home-left-footer {
+    bottom: 0;
+    position: fixed;
+}
  
