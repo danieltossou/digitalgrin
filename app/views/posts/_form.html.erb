@@ -1,28 +1,54 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="container new-article-top">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-sm-12">
+      <div class="card">
+        <div class="card-header bg-warning text-black text-center"><h4>Nouvel article</h4></div>
+        <div class="card-body">
+          <%= form_with(model: post, local: true) do |form| %>
+            <% if post.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% post.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="field">
+              <%= form.label :"Quel titre pour votre article ?" %><br>
+              <!-- <%= form.text_area :content %> -->
+              <%= form.hidden_field :title, :id => 'title' %>
+              <!-- input id="x" type="hidden" name="content"> -->
+              <trix-editor input="title" autofocus></trix-editor>
+            </div><br>
+
+            <div class="field">
+              <%= form.label :"Ecrivez, soyez inspirez" %><br>
+              <!-- <%= form.text_area :content %> -->
+              <%= form.hidden_field :content, :id => 'content' %>
+              <!-- input id="x" type="hidden" name="content"> -->
+              <trix-editor input="content"></trix-editor>
+            </div><br>
+
+            <%= form.hidden_field :user_id, :value => current_user.id %>
+
+            <div class="field">
+                <%= form.label :"De quoi traite votre article" %>
+                <%= form.select 'field_id', options_for_select(@fields.collect{ |f| [f.name, f.id] }), class: "form-control" %>
+            </div><br>
+
+            <div class="actions">
+              <%= form.submit "Publier", class: "btn btn-warning" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
   </div>
-
-  <%= form.hidden_field :user_id, :value => current_user.id %>
-
-  <div class="field">
-      <%= form.select 'field_id', options_for_select(@fields.collect{ |f| [f.name, f.id] }) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+    
+    
+    

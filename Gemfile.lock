@@ -208,8 +208,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
-    trix-gem (0.11.2)
-      rails (> 4.1, <= 6.0)
+    trix (0.10.1)
+      rails
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -252,7 +252,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  trix-gem
+  trix
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

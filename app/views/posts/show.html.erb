@@ -1,19 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container article-show-top">
+  <div class="row">
+    <div class="col-md-9 col-sm-12">
+      <div class="card">
+        <div class="card-body article-border">
+            <h1><b><%= raw(@post.title) %></b></h1>
+            <b><%= @post.user_id %></b> . <b><%= @post.field_id %></b> . <%= @post.created_at.strftime('%Y-%m-%d %H:%M:%S') %><br><br><br>
+            <p style="font-size:16px;"><%= raw(@post.content) %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <center>
+        <div class="card article-border">
+          <div class="card-header bg-warning text-secondary">
+            Auteur
+          </div>
+          <div class="card-body">
+            <b><%= @post.user_id %></b><br>
+            Petite bio
+          </div>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>
+
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  
 </p>
 
 <p>
   <strong>Field:</strong>
-  <%= @post.field_id %>
+  
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>

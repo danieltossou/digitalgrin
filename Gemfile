@@ -72,4 +72,4 @@ gem 'devise'
 gem 'octicons_helper'
 
 # Gem for rich text editor for article 
-gem 'trix-gem'
+gem 'trix'

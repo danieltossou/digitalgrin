@@ -9,7 +9,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require trix
  */
 
  @import 'bootstrap';
@@ -57,4 +57,15 @@
     bottom: 0;
     position: fixed;
 }
- 
+
+.new-article-top {
+    margin-top: 3vh;
+} 
+
+.article-show-top {
+    margin-top: 8vh;
+}
+
+.article-border {
+    border: 2px solid #e8e7e7;
+}
