@@ -20,6 +20,7 @@
      font-family: 'Raleway', sans-serif;
      height: 100%;
      margin: 0;
+     background-color: #f8f9fa;
  }
 
  .yield{
@@ -32,30 +33,6 @@
 
 .post-content {
     margin-top: 15vh;
-}
-
- .side-div {
-    height: 97.8vh;
-    margin-top: 0;
-    overflow: hidden;
-}
-
-.side-div-left {    
-    border-right: 1px solid #C0C0C0;
-}
-
-.side-div-right {    
-    border-left: 1px solid #C0C0C0;
-}
-
-.side-div-content {
-    margin-top: 13vh;
-    padding-left: 2vh;
-}
-
-.home-left-footer {
-    bottom: 0;
-    position: fixed;
 }
 
 .new-article-top {

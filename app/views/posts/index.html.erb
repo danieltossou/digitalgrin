@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-          <a class="nav-link pl-5" href="#"><%= octicon "home", :height => 32, :color => '#fec235',  :"aria-label" => "home" %><span class="sr-only">(current)</span></a>
+          <a class="nav-link pl-5" href="/"><%= octicon "home", :height => 32, :color => '#fec235',  :"aria-label" => "home" %><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link pl-5" href="#"><%= octicon "bell", :height => 32, :color => '#fec235',  :"aria-label" => "bell" %></a>
@@ -45,48 +45,82 @@
   </div>
 </nav>
 
-<div class="row">
-  <div class="col-md-3 side-div bg-white side-div-left">
-    <div class="side-div-content">
-      <h4><b>Home</b></h4><br><br><br>
-      <div>
-        <%= octicon "calendar", :height => 28,  :"aria-label" => "calendar" %>&nbsp;&nbsp;
-        <b>Evènements</b>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 post-content">
+      <div class="card border-warning">
+        <div class="card-body">
+          <div>
+            <h6>A propos</h6>
+          </div>
+          <div>
+              <h6>Sponsors</h6>
+            </div>
+            <div>
+                <h6>Equipe</h6>
+              </div>
+          <div>
+            <h6>Contact</h6>
+          </div>
+          <div>
+            <h6>Conditions d'utilisation</h6>
+          </div>
+          <div>
+              <h6>Code de conduite</h6>
+            </div>
+        </div>
       </div><br>
-      <div>
-        <%= octicon "organization", :height => 28,  :"aria-label" => "organization" %>&nbsp;&nbsp;
-        <b>Team</b>
-      </div><br>
-      <div>
-        <%= octicon "tools", :height => 28,  :"aria-label" => "tools" %>&nbsp;&nbsp;
-        <b>Paramètres</b>
-      </div>
-      <div class="home-left-footer">
-            Conditions Générales d'utilisation<br>Contributeurs<br>DigitalGrin &copy; <%= Time.now.year %>
+
+      <div class="card border-warning">
+        <div class="card-body">
+          <div>
+            <h6>
+              <%= octicon "organization", :height => 18,  :"aria-label" => "organization" %>
+              Mentorat</h6>
+            </div><br>
+          <div>
+            <h6>
+              <%= octicon "calendar", :height => 18,  :"aria-label" => "calendar" %>
+              Evènements</h6>
+          </div><br>
+          <div>
+            <h6>
+              <%= octicon "file-code", :height => 18,  :"aria-label" => "file-code" %>
+              Projets open-source</h6>
+          </div><br>
+          <div>
+            <h6>
+              <%= octicon "gear", :height => 18,  :"aria-label" => "gear" %>
+              Paramètres</h6>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-6 col-xs-12 bg-light">
-    <center class="post-content">
-      <%= link_to 'Ecrire un article', new_post_path, class: "btn btn-warning" %><br><br>
-
-      <% @posts.each do |post| %>
-        <div class="card">
-          <div class="card-body">
-              <h3><b><%= link_to raw(post.title), post %></b></h3>
-          </div>
-          <div class="card-footer">
-              Auteur : <%= post.user_id %> | <%= post.field_id %> | <%= post.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
-          </div>
-        </div><br>
-      <% end %>
-    </center>
-  </div>
-  <div class="col-md-3 side-div bg-white side-div-right">
-    <div class="side-div-content">
-        <h4><b>Sponsors</b></h4>
+    <div class="col-md-6 col-xs-12">
+      <center class="post-content">
+        <%= link_to 'Ecrire un article', new_post_path, class: "btn btn-warning" %><br><br>
+  
+        <% @posts.each do |post| %>
+          <div class="card">
+            <div class="card-body">
+                <h3><b><%= link_to raw(post.title), post %></b></h3>
+            </div>
+            <div class="card-footer">
+                Auteur : <%= post.user.email %> | <%= post.field.name %> | <%= post.created_at.strftime('%d %B') %>
+            </div>
+          </div><br>
+        <% end %>
+      </center>
+    </div>
+    <div class="col-md-3 post-content">
+      <div class="card border-warning">
+        <div class="card-body">
+            <h6>Community sponsors</h6>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 

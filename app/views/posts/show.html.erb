@@ -4,8 +4,19 @@
       <div class="card">
         <div class="card-body article-border">
             <h1><b><%= raw(@post.title) %></b></h1>
-            <b><%= @post.user_id %></b> . <b><%= @post.field_id %></b> . <%= @post.created_at.strftime('%Y-%m-%d %H:%M:%S') %><br><br><br>
-            <p style="font-size:16px;"><%= raw(@post.content) %></p>
+            <b><%= @post.user.email %></b> . <b><%= @post.field.name %></b> . <%= @post.created_at.strftime('%d %B') %><br><br><br>
+            <p style="font-size:16px;"><%= raw(@post.content) %></p><br>
+            <% @comments.each do |comment| %>
+              <div class="card">
+                <div class="card-body">
+                    <strong><%= comment.user.email %></strong><br><br>
+                    <p><%= comment.content %></p>
+                    <%= link_to 'Modifier', edit_comment_path(comment), class: "text-warning" %>
+                    <%= link_to 'Supprimer', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %>
+                </div>
+              </div><br>
+            <% end %>
+            <%= render 'comments/form' %>
         </div>
       </div>
     </div>
@@ -13,10 +24,10 @@
       <center>
         <div class="card article-border">
           <div class="card-header bg-warning text-secondary">
-            Auteur
+            <h5>Auteur</h5>
           </div>
           <div class="card-body">
-            <b><%= @post.user_id %></b><br>
+            <b><%= @post.user.email %></b><br><br>
             Petite bio
           </div>
         </div>
@@ -24,22 +35,6 @@
     </div>
   </div>
 </div>
-
-
-<p>
-  <strong>Content:</strong>
-  
-</p>
-
-<p>
-  <strong>User:</strong>
-  
-</p>
-
-<p>
-  <strong>Field:</strong>
-  
-</p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

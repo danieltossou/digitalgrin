@@ -1,10 +1,10 @@
-<%= form_with(model: comment, local: true) do |form| %>
-  <% if comment.errors.any? %>
+<%= form_with(model: @comment, local: true) do |form| %>
+  <% if @comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
       <ul>
-      <% comment.errors.full_messages.each do |message| %>
+      <% @comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,15 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :"Réagissez à cet article" %>
+    <%= form.text_area :content, class: "form-control"%>
   </div>
 
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
   <%= form.hidden_field :message_id%>
 
+  <%= form.hidden_field :post_id%>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Envoyer", class: "btn btn-warning" %>
   </div>
 <% end %>

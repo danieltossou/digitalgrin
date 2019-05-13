@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.includes(:field, :user).all
   end
 
   # GET /posts/1
@@ -67,6 +67,8 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
       @fields = Field.all
+      @comments = @post.comments.all
+      @comment = @post.comments.build
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
