@@ -16,7 +16,7 @@
           <a class="nav-link pl-5" href="<%= new_post_path %>"><%= octicon "pencil", :height => 32, :color => '#fec235',  :"aria-label" => "pencil" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-5" href="#"><%= octicon "comment-discussion", :height => 32, :color => '#fec235',  :"aria-label" => "comment-discussion" %></a>
+          <a class="nav-link pl-5" href="<%= messages_path %>"><%= octicon "comment-discussion", :height => 32, :color => '#fec235',  :"aria-label" => "comment-discussion" %></a>
         </li>
       </ul>
     </div>
@@ -32,22 +32,12 @@
         <% end %>
       </div>
     </span>
-    <!-- <li class="nav-item dropdown my-2 my-sm-0">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown link
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </li> -->
   </div>
 </nav>
 
-<div class="container">
+<div class="container space-top-index">
   <div class="row">
-    <div class="col-md-3 post-content">
+    <div class="col-md-3">
       <div class="card border-warning">
         <div class="card-body">
           <div>
@@ -97,13 +87,13 @@
       </div>
     </div>
     <div class="col-md-6 col-xs-12">
-      <center class="post-content">
+      <center class="">
         <%= link_to 'Ecrire un article', new_post_path, class: "btn btn-warning" %><br><br>
   
         <% @posts.each do |post| %>
           <div class="card">
             <div class="card-body">
-                <h3><b><%= link_to raw(post.title), post %></b></h3>
+                <h4><b><%= link_to raw(post.title), post %></b></h4>
             </div>
             <div class="card-footer">
                 Auteur : <%= post.user.email %> | <%= post.field.name %> | <%= post.created_at.strftime('%d %B') %>
@@ -112,7 +102,7 @@
         <% end %>
       </center>
     </div>
-    <div class="col-md-3 post-content">
+    <div class="col-md-3">
       <div class="card border-warning">
         <div class="card-body">
             <h6>Community sponsors</h6>

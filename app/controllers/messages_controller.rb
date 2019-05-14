@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.includes(:user, :field).all
   end
 
   # GET /messages/1
@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to @message, notice: 'Message crée avec succès.' }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MessagesController < ApplicationController
   def update
     respond_to do |format|
       if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
+        format.html { redirect_to @message, notice: 'Le message a bien été mis à jour.' }
         format.json { render :show, status: :ok, location: @message }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
+      format.html { redirect_to messages_url, notice: 'Le message a bien été supprimé.' }
       format.json { head :no_content }
     end
   end
@@ -67,10 +67,12 @@ class MessagesController < ApplicationController
     def set_message
       @message = Message.find(params[:id])
       @fields = Field.all
+      @responses = @message.responses.all
+      @response = @message.responses.build
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:content, :user_id, :field_id)
+      params.require(:message).permit(:title, :content, :user_id, :field_id)
     end
 end

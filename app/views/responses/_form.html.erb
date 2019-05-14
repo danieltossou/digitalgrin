@@ -1,10 +1,10 @@
-<%= form_with(model: response, local: true) do |form| %>
-  <% if response.errors.any? %>
+<%= form_with(model: @response, local: true) do |form| %>
+  <% if @response.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
 
       <ul>
-      <% response.errors.full_messages.each do |message| %>
+      <% @response.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,21 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :"Participer à la discussion" %>
+    <%= form.text_area :content, class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
 
-  <div class="field">
-    <%= form.label :message_id %>
-    <%= form.number_field :message_id %>
-  </div>
+  <%= form.hidden_field :message_id%>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Envoyez", class: "btn btn-warning" %>
   </div>
 <% end %>

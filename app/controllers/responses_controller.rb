@@ -4,10 +4,10 @@ class ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    @responses = Response.all
+    @responses = Response.includes(:user).all
   end
 
-  # GET /responses/1
+  # GET /responses/1sss
   # GET /responses/1.json
   def show
   end
@@ -25,10 +25,11 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(response_params)
+    @message = Message.find(response_params[:message_id])
 
     respond_to do |format|
       if @response.save
-        format.html { redirect_to @response, notice: 'Response was successfully created.' }
+        format.html { redirect_to @message, notice: 'Réponse envoyée!' }
         format.json { render :show, status: :created, location: @response }
       else
         format.html { render :new }

@@ -1,21 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @message.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @message.user_id %>
-</p>
-
-<p>
-  <strong>Field:</strong>
-  <%= @message.field_id %>
-</p>
+<div class="container space-top-show">
+  <div class="row">
+    <div class="col-md-9 col-sm-12">
+      <div class="card">
+        <div class="card-body article-border">
+            <h1><b><%= raw(@message.title) %></b></h1>
+            <b><%= @message.user.email %></b> . <b><%= @message.field.name %></b> . <%= @message.created_at.strftime('%d %B') %><br><br><br>
+            <p style="font-size:16px;"><%= raw(@message.content) %></p><br>
+            <% @responses.each do |response| %>
+              <div class="card">
+                <div class="card-body">
+                    <strong><%= response.user.email %></strong><br><br>
+                    <p><%= response.content %></p>
+                    <%= link_to 'Modifier', edit_response_path(response), class: "text-warning" %>
+                    <%= link_to 'Supprimer', response_path(response), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %>
+                </div>
+              </div><br>
+            <% end %>
+            <%= render 'responses/form' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <center>
+        <div class="card article-border">
+          <div class="card-header bg-warning text-secondary">
+            <h5>Auteur</h5>
+          </div>
+          <div class="card-body">
+            <b><%= @message.user.email %></b><br><br>
+            Petite bio
+          </div>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
-
+<%= link_to 'Destroy', @message, method: :delete, data: { confirm: 'Are you sure?' } %>
 

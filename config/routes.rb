@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+  get 'pages/sponsors'
+  get 'pages/team'
+  get 'pages/cgu'
+  get 'pages/terms'
   resources :responses
   resources :posts
   resources :comments

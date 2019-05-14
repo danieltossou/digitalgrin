@@ -1,5 +1,9 @@
-<h1>New Message</h1>
-
 <%= render 'form', message: @message %>
 
-<%= link_to 'Back', messages_path %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 col-sm-12">
+            <%= link_to 'Retour aux discussions', messages_path %>
+        </div>
+    </div>
+</div>

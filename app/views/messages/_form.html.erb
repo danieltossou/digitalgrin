@@ -1,28 +1,51 @@
-<%= form_with(model: message, local: true) do |form| %>
-  <% if message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-      <ul>
-      <% message.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container new-article-top">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-sm-12">
+        <div class="card">
+          <div class="card-header bg-warning text-black text-center"><h4>Nouvelle discussion</h4></div>
+          <div class="card-body">
+            <%= form_with(model: @message, local: true) do |form| %>
+              <% if @message.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+            
+                  <ul>
+                  <% @message.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+  
+              <div class="field">
+                <%= form.label :"Posez votre question" %><br>
+                <!-- <%= form.text_area :content %> -->
+                <%= form.hidden_field :title, :id => 'title' %>
+                <!-- input id="x" type="hidden" name="content"> -->
+                <trix-editor input="title" autofocus></trix-editor>
+              </div><br>
+  
+              <div class="field">
+                <%= form.label :"Détaillez votre question" %><br>
+                <!-- <%= form.text_area :content %> -->
+                <%= form.hidden_field :content, :id => 'content' %>
+                <!-- input id="x" type="hidden" name="content"> -->
+                <trix-editor input="content"></trix-editor>
+              </div><br>
+  
+              <%= form.hidden_field :user_id, :value => current_user.id %>
+  
+              <div class="field">
+                  <%= form.label :"Choississez un domaine" %>
+                  <%= form.select 'field_id', options_for_select(@fields.collect{ |f| [f.name, f.id] }), class: "form-control" %>
+              </div><br>
+  
+              <div class="actions">
+                <%= form.submit "Envoyez", class: "btn btn-warning" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
   </div>
-
-  <%= form.hidden_field :user_id, :value => current_user.id %>
-
-  <div class="field">
-      <%= form.select 'field_id', options_for_select(@fields.collect{ |f| [f.name, f.id] }) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
