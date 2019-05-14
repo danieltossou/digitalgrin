@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.includes(:field, :user).all
+    @posts = Post.includes(:field, :user).all.order("updated_at DESC")
   end
 
   # GET /posts/1
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
       @fields = Field.all
-      @comments = @post.comments.all
+      @comments = @post.comments.all.order("updated_at DESC")
       @comment = @post.comments.build
     end
 

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'pages/about'
-  get 'pages/sponsors'
-  get 'pages/team'
-  get 'pages/cgu'
-  get 'pages/terms'
+  mount Notifications::Engine => "/notifications"
+  get 'about', to: 'pages#about'
+  get 'sponsors', to: 'pages#sponsors'
+  get 'team', to: 'pages#team'
+  get 'cgu', to: 'pages#cgu'
+  get 'terms', to: 'pages#terms'
   resources :responses
   resources :posts
   resources :comments

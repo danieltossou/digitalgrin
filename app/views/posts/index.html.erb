@@ -41,23 +41,23 @@
       <div class="card border-warning">
         <div class="card-body">
           <div>
-            <h6>A propos</h6>
+            <h6><%= link_to  "A propos", about_path %></h6>
           </div>
           <div>
-              <h6>Sponsors</h6>
+              <h6><%= link_to  "Sponsors", sponsors_path %></h6>
             </div>
             <div>
-                <h6>Equipe</h6>
+                <h6><%= link_to  "Equipe", team_path %></h6>
               </div>
           <div>
             <h6>Contact</h6>
           </div>
           <div>
-            <h6>Conditions d'utilisation</h6>
+              <h6><%= link_to  "Conditions d'utilisation", cgu_path %></h6>
           </div>
           <div>
-              <h6>Code de conduite</h6>
-            </div>
+              <h6><%= link_to  "Code de conduite", terms_path %></h6>
+          </div>
         </div>
       </div><br>
 

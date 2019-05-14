@@ -1,2 +1,32 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<div class="container space-top-show">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 col-sm-12">
+            <div class="card border-warning">
+                <div class="card-body">
+                    <div class="container">
+                        <h1 class="text-warning"><strong>DigitalGrin</strong></h1><br>
+                        <h5 class="about-content">
+                            est un espace où les amoureux des technologies échangent des idées et s’aident mutuellement à grandir. 
+                            C'est une communauté en ligne qui permet de partager et de découvrir de bonnes idées, 
+                            d'avoir des débats et de se faire aider. Tout le monde peut partager des articles, 
+                            des questions, des discussions, etc. pourvu qu'il ait les droits sur les mots 
+                            qu'il partage. La publication de votre propre blog est la bienvenue.
+                        </h5>
+                    </div>
+                </div>
+            </div><br>
+            <div class="card">
+                <div class="card-body">
+                    <div class="container bottom-menu">
+                        <span class="menu-content"><%= link_to  "Accueil", root_path %></span>
+                        <span class="menu-content"><%= link_to  "Sponsors", sponsors_path %></span>
+                        <span class="menu-content"><%= link_to  "Equipe", team_path %></span>
+                        <span class="menu-content">Contact</span>
+                        <span class="menu-content"><%= link_to  "Conditions d'utilisation", cgu_path %></span>
+                        <span class="menu-content"><%= link_to  "Code de conduite", terms_path %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

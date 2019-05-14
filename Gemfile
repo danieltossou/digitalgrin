@@ -73,3 +73,6 @@ gem 'octicons_helper'
 
 # Gem for rich text editor for article 
 gem 'trix'
+
+# Gem for notifications
+gem 'notifications', '~> 0.6.0'

@@ -34,9 +34,10 @@
       </center>
     </div>
   </div>
+</div><br>
+
+<div class="container">
+    <%= link_to 'Modifier', edit_message_path(@message), class:"btn btn-default" %> |
+    <%= link_to 'Retour', messages_path, class:"btn btn-default" %>
+    <%= link_to 'Supprimer', @message, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
 </div>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
-<%= link_to 'Destroy', @message, method: :delete, data: { confirm: 'Are you sure?' } %>
-

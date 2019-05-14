@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.includes(:user, :field).all
+    @messages = Message.includes(:user, :field).all.order("updated_at DESC")
   end
 
   # GET /messages/1
@@ -67,7 +67,7 @@ class MessagesController < ApplicationController
     def set_message
       @message = Message.find(params[:id])
       @fields = Field.all
-      @responses = @message.responses.all
+      @responses = @message.responses.all.order("updated_at DESC")
       @response = @message.responses.build
     end
 
