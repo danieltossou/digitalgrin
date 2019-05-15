@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Notifications::Engine => "/notifications"
   get 'about', to: 'pages#about'
   get 'sponsors', to: 'pages#sponsors'
   get 'team', to: 'pages#team'
