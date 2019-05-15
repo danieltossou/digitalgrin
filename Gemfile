@@ -75,3 +75,4 @@ gem 'octicons_helper'
 gem 'trix'
 
 # Gem for notifications
+gem 'activity_notification'

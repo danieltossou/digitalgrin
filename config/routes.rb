@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :fields
   devise_for :users
+  notify_to :users, with_devise: :users, devise_default_routes: true
     devise_scope :user do
       authenticated :user do
         root :to => 'posts#index'

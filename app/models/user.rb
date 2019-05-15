@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :posts
   has_many :responses
+
+  acts_as_target
 end
