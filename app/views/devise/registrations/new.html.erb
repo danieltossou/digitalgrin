@@ -35,7 +35,9 @@
             
               <div class="actions">
                 <%= f.submit "INSCRIPTION", class: "btn btn-warning" %>
+                <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary text-white" %>
               </div>
+
             <% end %>
             
             <%= render "devise/shared/links" %>

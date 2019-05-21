@@ -1,3 +1,53 @@
+<div class="signup-bg">
+  <div class="container content">
+    <div class="row">
+      <div class="col-md-8 col-12 col-sm-12">
+        <h1 class="brand text-white">DigitalGrin</h1>
+        <h3 class="text-white">Communauté francophone où les amoureux<br> des technologies partagent leurs idées 
+          et s’aident mutuellement à progresser.<br><br>Tout le monde peut partager des articles,
+          des questions, des discussions et trouver des mentors.
+        </h3>
+      </div>
+      <div class="col-md-4 col-1 col-sm-12">
+        <div class="card">
+          <div class="card-header bg-warning text-black text-center"><h4>CONNEXION</h4></div>
+          <div class="card-body">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :Email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+          
+            <div class="field">
+              <%= f.label :"Mot de passe" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+          
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :"Garder ma session ouverte" %>
+              </div>
+            <% end %>
+          
+            <div class="actions">
+              <%= f.submit "CONNEXION", class: "btn btn-warning" %>
+              <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary text-white" %>
+            </div>
+          <% end %>
+          
+          <%= render "devise/shared/links" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <div class="container content">
   <div class="row">
     <div class="col-md-6 offset-md-3 col-sm-12">

@@ -23,15 +23,15 @@
 
   <body>
 
-    <!-- Alert messages -->  
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
     <main class="yield">
-      <%= yield %>
+        <%= yield %>
+      <!-- Alert messages -->  
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
     </main>
     
   </body>

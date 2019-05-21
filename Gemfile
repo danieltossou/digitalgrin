@@ -81,3 +81,6 @@ gem 'trix'
 
 # Gem for notifications
 gem 'activity_notification'
+
+# Gem for authenticate with facebook
+gem 'omniauth-facebook'
