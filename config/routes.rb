@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'team', to: 'pages#team'
   get 'cgu', to: 'pages#cgu'
   get 'terms', to: 'pages#terms'
+  get 'contact', to: 'pages#contact'
+  get 'privacy', to: 'pages#privacy'
   resources :responses
   resources :posts
   resources :comments
