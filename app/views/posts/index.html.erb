@@ -27,7 +27,6 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <% if user_signed_in? %>
           <div class="dropdown-item"><strong><%= current_user.email %></strong></div>
-          <div class="dropdown-item"><%= link_to 'Profil', current_user %></div>
           <div class="dropdown-item"><%= link_to 'Mofifier', edit_user_registration_path %></div>
           <div class="dropdown-item"><%= link_to "Deconnexion", destroy_user_all_session_path, method: :delete %></div>
         <% end %>
