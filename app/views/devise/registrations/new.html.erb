@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-4 col-1 col-sm-12">
         <div class="card">
-          <div class="card-header bg-warning text-black text-center"><h4>CONNECTEZ-VOUS</h4></div>
+          <div class="card-header bg-warning text-black text-center"><h4>INSCRIVEZ-VOUS</h4></div>
           <div class="card-body">
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
@@ -35,14 +35,11 @@
             
               <div class="actions">
                 <%= f.submit "INSCRIPTION", class: "btn btn-warning" %>
-                <div>
-                  <!-- <i class="fab fa-facebook fa-2x"></i> -->
-                  <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary text-white" %>
-                </div>
+                <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary text-white" %>
               </div>
 
             <% end %>
-            
+            <%= render "devise/shared/links" %>
           </div>
         </div>
       </div>

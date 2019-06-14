@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :messages
   resources :fields
-  resources :users, except: :destroy
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   notify_to :users, with_devise: :users, devise_default_routes: true
     devise_scope :user do

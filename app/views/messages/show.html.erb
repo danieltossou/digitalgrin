@@ -9,7 +9,7 @@
             <% @responses.each do |response| %>
               <div class="card">
                 <div class="card-body">
-                    <strong><%= response.user.email %></strong><br><br>
+                    <strong></strong><br><br>
                     <p><%= response.content %></p>
                     <%= link_to 'Modifier', edit_response_path(response), class: "text-warning" %>
                     <%= link_to 'Supprimer', response_path(response), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %>
