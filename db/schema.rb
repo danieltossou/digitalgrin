@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2019_05_21_031357) do
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.integer "user_id"
-    t.integer "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "post_id"
@@ -65,7 +64,6 @@ ActiveRecord::Schema.define(version: 2019_05_21_031357) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.integer "post_id"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -100,6 +98,10 @@ ActiveRecord::Schema.define(version: 2019_05_21_031357) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "provider"

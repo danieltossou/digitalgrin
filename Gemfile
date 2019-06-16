@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -84,3 +84,9 @@ gem 'activity_notification'
 
 # Gem for authenticate with facebook
 gem 'omniauth-facebook'
+
+# Gem for access authorization
+gem 'cancancan'
+
+# Gem for Admin
+gem 'activeadmin'
