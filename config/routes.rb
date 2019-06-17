@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  
   get 'about', to: 'pages#about'
   get 'sponsors', to: 'pages#sponsors'
   get 'team', to: 'pages#team'
