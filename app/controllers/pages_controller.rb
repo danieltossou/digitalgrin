@@ -20,4 +20,7 @@ class PagesController < ApplicationController
   def privacy
   end
 
+  def error
+  end
+
 end

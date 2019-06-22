@@ -11,8 +11,10 @@
                 <div class="card-body">
                     <strong><%= comment.user.email %></strong><br><br>
                     <p><%= comment.content %></p>
+                  <% if comment.user_id === current_user.id %>
                     <%= link_to 'Modifier', edit_comment_path(comment), class: "text-warning" %>
                     <%= link_to 'Supprimer', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %>
+                  <% end %>
                 </div>
               </div><br>
             <% end %>
@@ -37,8 +39,10 @@
 </div><br>
 
 <div class="container">
-    <%= link_to 'Modifier', edit_post_path(@post), class: "btn btn-default" %> |
+    <!--<%= link_to 'Modifier', edit_post_path(@post), class: "btn btn-default" %> |
     <%= link_to 'Retour', posts_path, class: "btn btn-default" %>
     <%= link_to 'Supprimer', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+!-->
+<%= link_to 'Retour', posts_path, class: "btn btn-default" %>
 </div>
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'terms', to: 'pages#terms'
   get 'contact', to: 'pages#contact'
   get 'privacy', to: 'pages#privacy'
+  get 'error', to: 'pages#error'
   resources :responses
   resources :posts
   resources :comments

@@ -1,5 +1,6 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   # GET /responses
   # GET /responses.json

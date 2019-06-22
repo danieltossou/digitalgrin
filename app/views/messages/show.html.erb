@@ -9,10 +9,12 @@
             <% @responses.each do |response| %>
               <div class="card">
                 <div class="card-body">
-                    <strong></strong><br><br>
+                    <strong><%= response.user.email %></strong><br><br>
                     <p><%= response.content %></p>
+                  <% if response.user_id === current_user.id %>
                     <%= link_to 'Modifier', edit_response_path(response), class: "text-warning" %>
                     <%= link_to 'Supprimer', response_path(response), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %>
+                  <% end %>
                 </div>
               </div><br>
             <% end %>
@@ -37,7 +39,10 @@
 </div><br>
 
 <div class="container">
-    <%= link_to 'Modifier', edit_message_path(@message), class:"btn btn-default" %> |
+    <!--<%= link_to 'Modifier', edit_message_path(@message), class:"btn btn-default" %> |
     <%= link_to 'Retour', messages_path, class:"btn btn-default" %>
     <%= link_to 'Supprimer', @message, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+
+-->
+<%= link_to 'Retour', messages_path, class:"btn btn-default" %>
 </div>
