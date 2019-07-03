@@ -3,7 +3,7 @@
     <div class="col-md-9 col-sm-12">
       <div class="card">
         <div class="card-body article-border">
-            <h1><b><%= raw(@post.title) %></b></h1>
+            <h1><b><%= @post.title %></b></h1>
             <b><%= @post.user.email %></b> . <b><%= @post.field.name %></b> . <%= @post.created_at.strftime('%d %B') %><br><br><br>
             <p style="font-size:16px;"><%= raw(@post.content) %></p><br>
             <% @comments.each do |comment| %>
@@ -39,10 +39,9 @@
 </div><br>
 
 <div class="container">
-    <!--<%= link_to 'Modifier', edit_post_path(@post), class: "btn btn-default" %> |
+    <%= link_to 'Modifier', edit_post_path(@post), class: "btn btn-default" %> |
+      <!-- <%= link_to 'Retour', posts_path, class: "btn btn-default" %>
+      <%= link_to 'Supprimer', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> -->
     <%= link_to 'Retour', posts_path, class: "btn btn-default" %>
-    <%= link_to 'Supprimer', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-!-->
-<%= link_to 'Retour', posts_path, class: "btn btn-default" %>
 </div>
 

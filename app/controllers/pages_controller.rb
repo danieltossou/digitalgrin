@@ -5,9 +5,6 @@ class PagesController < ApplicationController
   def sponsors
   end
 
-  def team
-  end
-
   def cgu
   end
 

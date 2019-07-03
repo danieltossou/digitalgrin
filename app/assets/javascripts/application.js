@@ -13,4 +13,5 @@
 //= require jquery3
 //= require jquery_ujs
 //= require trix
+//= require trix_attachments
 //= require_tree .

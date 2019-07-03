@@ -19,15 +19,14 @@
 
             <div class="field">
               <%= form.label :"Quel titre pour votre article ?" %><br>
-              <!-- <%= form.text_area :content %> -->
-              <%= form.hidden_field :title, :id => 'title' %>
-              <!-- input id="x" type="hidden" name="content"> -->
-              <trix-editor input="title" autofocus></trix-editor>
+              <%= form.text_area :title, class: "form-control" %>
+             <!--  <%= form.hidden_field :title, :id => 'title' %>
+              <trix-editor input="title" autofocus></trix-editor> -->
             </div><br>
 
             <div class="field">
               <%= form.label :"Ecrivez, soyez inspirez" %><br>
-              <!-- <%= form.text_area :content %> -->
+              <!-- <%= form.text_area :content, :id => 'content' %>  -->
               <%= form.hidden_field :content, :id => 'content' %>
               <!-- input id="x" type="hidden" name="content"> -->
               <trix-editor input="content"></trix-editor>

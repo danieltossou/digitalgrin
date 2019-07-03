@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   
   get 'about', to: 'pages#about'
   get 'sponsors', to: 'pages#sponsors'
-  get 'team', to: 'pages#team'
   get 'cgu', to: 'pages#cgu'
   get 'terms', to: 'pages#terms'
   get 'contact', to: 'pages#contact'
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :messages
   resources :fields
+  resources :images, only: [:create]
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   notify_to :users, with_devise: :users, devise_default_routes: true
     devise_scope :user do

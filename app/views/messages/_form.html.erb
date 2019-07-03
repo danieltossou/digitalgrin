@@ -19,10 +19,9 @@
   
               <div class="field">
                 <%= form.label :"Posez votre question" %><br>
-                <!-- <%= form.text_area :content %> -->
-                <%= form.hidden_field :title, :id => 'title' %>
-                <!-- input id="x" type="hidden" name="content"> -->
-                <trix-editor input="title" autofocus></trix-editor>
+                <%= form.text_area :title, class: "form-control"  %>
+                <!-- <%= form.hidden_field :title, :id => 'title' %>
+                <trix-editor input="title" autofocus></trix-editor> -->
               </div><br>
   
               <div class="field">

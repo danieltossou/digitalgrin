@@ -78,6 +78,9 @@ gem 'octicons_helper'
 # Gem for rich text editor for article 
 gem 'trix'
 
+# Gem for image upload
+gem 'shrine'
+
 # Gem for notifications
 gem 'activity_notification'
 
