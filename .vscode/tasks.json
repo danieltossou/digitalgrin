@@ -25,6 +25,11 @@
             "type": "npm",
             "script": "install",
             "problemMatcher": []
+        },
+        {
+            "type": "rake",
+            "task": "db:drop",
+            "problemMatcher": []
         }
     ]
 }

@@ -14,9 +14,12 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments
   resources :messages
-  resources :fields
+  resources :fields 
   resources :images, only: [:create]
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
+
+  get '/:id', to: 'pages#profil', as: 'profile'
+
   notify_to :users, with_devise: :users, devise_default_routes: true
     devise_scope :user do
       authenticated :user do

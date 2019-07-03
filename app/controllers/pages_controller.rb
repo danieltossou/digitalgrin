@@ -20,4 +20,11 @@ class PagesController < ApplicationController
   def error
   end
 
+  def profil
+    @user = User.find(params['id'])
+
+    puts @user.inspect()
+  end
+
+
 end

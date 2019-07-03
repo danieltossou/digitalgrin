@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: %i[facebook]
 
+  has_and_belongs_to_many :fields
+  
   has_many :messages
   has_many :comments
   has_many :posts
@@ -32,4 +34,11 @@ class User < ApplicationRecord
       end
     end
   end
+
+  after_update do
+    puts"============================================================"
+    # User.fields.create!(field_id: :field_ids, user_id: current_user.id)
+    puts"============================================================"
+  end
+
 end

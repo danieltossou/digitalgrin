@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_082447) do
+ActiveRecord::Schema.define(version: 2019_07_03_124838) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 2019_07_02_082447) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "etat", default: true
+  end
+
+  create_table "fields_users", id: false, force: :cascade do |t|
+    t.integer "field_id"
+    t.integer "user_id"
+    t.index ["field_id"], name: "index_fields_users_on_field_id"
+    t.index ["user_id"], name: "index_fields_users_on_user_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -143,6 +150,10 @@ ActiveRecord::Schema.define(version: 2019_07_02_082447) do
     t.string "picture"
     t.string "date_of_birth"
     t.string "gender"
+    t.string "firstName"
+    t.text "bio"
+    t.string "country"
+    t.string "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
