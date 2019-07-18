@@ -1,6 +1,6 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -19,7 +19,7 @@
       </div>
 
       <div class="field">
-        <%= f.collection_select :field_ids, Field.all, :id, :name, multiple: true  %>
+          <%= f.association :fields, as: :check_boxes, label: "Competences: " %>
       </div>
 
         <div class="field">

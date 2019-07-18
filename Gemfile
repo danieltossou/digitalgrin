@@ -92,3 +92,6 @@ gem 'cancancan'
 
 # Gem for Admin
 gem 'activeadmin'
+
+# Gem for form
+gem 'simple_form'

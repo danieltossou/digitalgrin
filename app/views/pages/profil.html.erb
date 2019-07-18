@@ -1,9 +1,14 @@
 <div class="container">
-    <p><%= @user.email %></p>
-    <p><%= @user.firstName %></p>
-    <p><%= @user.bio %></p>
-    <p><%= @user.country %></p>
-    <p><%= @user.status %></p>
-    <p><%= @user.email %></p>
+    <p>Email: <%= @user.email %></p>
+    <p>First name: <%= @user.firstName %></p>
+    <p>Biographie: <%= @user.bio %></p>
+    <p>Pays: <%= @user.country %></p>
+    <p>Status: <%= @user.status %></p>
+    <% unless @user.fields.empty? %>
+        <p>
+            Competences: 
+            <%= @user.fields.map(&:name).join(' - ') %>
+        </p>
+    <% end %>
     <div class="dropdown-item"><%= link_to 'Editer', edit_user_registration_path %></div>
 </div>
