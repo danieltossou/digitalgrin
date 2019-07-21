@@ -35,10 +35,4 @@ class User < ApplicationRecord
     end
   end
 
-  after_update do
-    puts"============================================================"
-    # User.fields.create!(field_id: :field_ids, user_id: current_user.id)
-    puts"============================================================"
-  end
-
 end
