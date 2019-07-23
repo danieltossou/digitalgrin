@@ -52,8 +52,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-  def after_sign_up_path_for(profile_path(current_user.id))
-    super(profile_path(current_user.id))
+  def after_sign_up_path_for
+    super
   end
 
   # The path used after sign up for inactive accounts.

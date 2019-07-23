@@ -66,8 +66,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
-      @fields = Field.all
+      @post = Post.find_by_slug(params[:id])
       @comments = @post.comments.all.order("updated_at DESC")
       @comment = @post.comments.build
     end

@@ -95,3 +95,6 @@ gem 'activeadmin'
 
 # Gem for form
 gem 'simple_form'
+
+# Gem for remplace id to slug in url
+gem 'stringex', '~> 2.7', '>= 2.7.1'
