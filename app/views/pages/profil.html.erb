@@ -1,14 +1,42 @@
 <div class="container">
-    <p>Email: <%= @user.email %></p>
-    <p>First name: <%= @user.firstName %></p>
-    <p>Biographie: <%= @user.bio %></p>
-    <p>Pays: <%= @user.country %></p>
-    <p>Status: <%= @user.status %></p>
-    <% unless @user.fields.empty? %>
-        <p>
-            Competences: 
-            <%= @user.fields.map(&:name).join(' - ') %>
-        </p>
-    <% end %>
-    <div class="dropdown-item"><%= link_to 'Editer', edit_user_registration_path %></div>
+    <div class="col-xs-12">
+        
+        <div class="card article-border border-warning">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-9 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12">
+                                    <center>
+                                        <img src="#" alt="photo de profil" class="img-responsive img-circle" />
+                                    </center>    
+                                </div>
+                                <div class="col-md-8 col-xs-12">
+                                    <h1><%= @user.firstName %></h1><br>
+                                    <h6><i><%= @user.bio %></i></h6>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-xs-12">
+                        <p><b>Email</b></p>
+                        <h6><%= @user.email %></h6>
+                        <p><b>Pays</b></p>
+                        <h6><%= @user.country %></h6>
+                        <p><b>Statut</b></p>
+                        <h6><%= @user.status %></h6>
+                        <% unless @user.fields.empty? %>
+                            <p><b>Compétences</b></p>
+                            <h6><%= @user.fields.map(&:name).join(' - ') %></h6>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    
+    <div>
+        <%= link_to 'Editer', edit_user_registration_path, class: "btn btn-default" %>
+        <%= link_to 'Retour', :back, class: "btn btn-default" %>
+    </div>
 </div>
