@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
-
+# ruby '2.6.3'
+  ruby '2.6.3'
+  
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
@@ -78,9 +79,6 @@ gem 'octicons_helper'
 # Gem for rich text editor for article 
 gem 'trix'
 
-# Gem for image upload
-gem 'shrine'
-
 # Gem for notifications
 gem 'activity_notification'
 
@@ -98,3 +96,6 @@ gem 'simple_form'
 
 # Gem for remplace id to slug in url
 gem 'stringex', '~> 2.7', '>= 2.7.1'
+
+# Upload de fichier
+gem 'carrierwave', '~> 2.0', '>= 2.0.1'

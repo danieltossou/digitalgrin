@@ -8,7 +8,7 @@
                             <div class="row">
                                 <div class="col-md-4 col-xs-12">
                                     <center>
-                                        <img src="#" alt="photo de profil" class="img-responsive img-circle" />
+                                        <%= image_tag @user.image.image_url, alt: "photo de profil", class: "img-responsive img-circle", heigth: 100 if @user.image %>
                                     </center>    
                                 </div>
                                 <div class="col-md-8 col-xs-12">

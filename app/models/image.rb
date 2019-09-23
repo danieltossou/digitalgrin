@@ -1,6 +1,6 @@
 class Image < ApplicationRecord
 
-    # adds an `image` virtual attribute
-    include ::PhotoUploader::Attachment.new(:image)
+    mount_uploader :image, ImageUploader
 
+    # adds an `image` virtual attribute
 end

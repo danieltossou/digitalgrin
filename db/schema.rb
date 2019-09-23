@@ -61,9 +61,15 @@ ActiveRecord::Schema.define(version: 2019_07_23_110802) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.text "image_data"
+    t.string "image"
+    t.integer "user_id"
+    t.integer "post_id"
+    t.integer "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_images_on_message_id"
+    t.index ["post_id"], name: "index_images_on_post_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|

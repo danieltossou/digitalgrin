@@ -22,8 +22,6 @@ class PagesController < ApplicationController
 
   def profil
     @user = User.find(params['id'])
-
-    puts @user.inspect()
   end
 
 
